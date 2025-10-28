@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeador de Eventos Corporativos - Fortaleza/CE</title>
+    <link rel="stylesheet" href="eventos-style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>🎯 Mapeador de Eventos Corporativos</h1>
+                <p class="subtitle">Fortaleza - Ceará, Brasil</p>
+            </div>
+        </header>
+
+        <section class="controls">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="🔍 Buscar eventos por nome, local ou setor...">
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="filterSetor">Setor:</label>
+                    <select id="filterSetor">
+                        <option value="">Todos os Setores</option>
+                        <option value="Tecnologia">Tecnologia</option>
+                        <option value="Negócios">Negócios</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Educação">Educação</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Finanças">Finanças</option>
+                        <option value="Construção">Construção</option>
+                        <option value="Varejo">Varejo</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filterCapacidade">Capacidade Mínima:</label>
+                    <select id="filterCapacidade">
+                        <option value="0">Todas</option>
+                        <option value="200">200+ pessoas</option>
+                        <option value="300">300+ pessoas</option>
+                        <option value="500">500+ pessoas</option>
+                        <option value="1000">1000+ pessoas</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filterMes">Mês:</label>
+                    <select id="filterMes">
+                        <option value="">Todos os Meses</option>
+                        <option value="11">Novembro 2025</option>
+                        <option value="12">Dezembro 2025</option>
+                        <option value="1">Janeiro 2026</option>
+                        <option value="2">Fevereiro 2026</option>
+                        <option value="3">Março 2026</option>
+                    </select>
+                </div>
+
+                <button id="clearFilters" class="btn-secondary">Limpar Filtros</button>
+            </div>
+
+            <div class="action-buttons">
+                <button id="exportJSON" class="btn-primary">📥 Exportar JSON</button>
+                <button id="exportCSV" class="btn-primary">📊 Exportar CSV</button>
+                <button id="refreshData" class="btn-secondary">🔄 Atualizar Dados</button>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalEventos">0</div>
+                <div class="stat-label">Eventos Encontrados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalParticipantes">0</div>
+                <div class="stat-label">Total de Participantes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="mediaCapacidade">0</div>
+                <div class="stat-label">Capacidade Média</div>
+            </div>
+        </section>
+
+        <section class="eventos-grid" id="eventosGrid">
+            <!-- Os eventos serão inseridos aqui dinamicamente -->
+        </section>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Carregando eventos...</p>
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <p>😕 Nenhum evento encontrado com os filtros selecionados.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Mapeador de Eventos Corporativos - Fortaleza/CE</p>
+        <p>Dados atualizados em tempo real</p>
+    </footer>
+
+    <script src="eventos-script.js"></script>
+</body>
+</html>
